@@ -1,0 +1,27 @@
+name: Deploy Pipeline to Databricks
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Databricks CLI
+        uses: databricks/setup-cli@main
+
+      - name: Deploy Notebook
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+        run: |
+          # This authenticates with your secrets and pushes the code to your workspace
+          databricks workspace import ./01_My_First_Notebook.py /Workspace/Users/udayshankar8991@gmail.com/01_My_First_Notebook --format SOURCE --overwrite
+          
+          echo "Deployment successful!"
