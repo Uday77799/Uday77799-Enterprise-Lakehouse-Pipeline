@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Databricks CLI
         uses: databricks/setup-cli@main
@@ -21,7 +21,7 @@ jobs:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
         run: |
-          # This authenticates with your secrets and pushes the code to your workspace
-          databricks workspace import ./01_My_First_Notebook.py /Workspace/Users/udayshankar8991@gmail.com/01_My_First_Notebook --format SOURCE --overwrite
+          # Updated syntax for the new Databricks CLI
+          databricks workspace import /Workspace/Users/udayshankar8991@gmail.com/01_My_First_Notebook --file ./01_My_First_Notebook.py --format SOURCE --overwrite
           
           echo "Deployment successful!"
