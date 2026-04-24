@@ -21,8 +21,7 @@ jobs:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
         run: |
-          # This authenticates with your secrets and pushes the code to your workspace
-          # The target path now includes the .py extension to prevent the folder overwrite error
-          databricks workspace import /Workspace/Users/udayshankar8991@gmail.com/01_My_First_Notebook.py --file ./01_My_First_Notebook.py --format SOURCE --overwrite
+          # Bypassing the CLI zip bug by using AUTO format and a direct filename
+          databricks workspace import /Workspace/Users/udayshankar8991@gmail.com/01_My_First_Notebook.py --file 01_My_First_Notebook.py --format AUTO --overwrite
           
           echo "Deployment successful!"
