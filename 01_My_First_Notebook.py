@@ -82,3 +82,24 @@ ai_ready_df = df.withColumn(
 
 # Show the new 'AI-Ready' column alongside the fare
 display(ai_ready_df.select("vendor_id", "total_amount", "is_premium_trip"))
+# --- SNOWFLAKE LOAD ---
+
+# 1. Define your Snowflake connection properties
+sfOptions = {
+  "sfUrl": "YDTUQKX-EEC82979.snowflakecomputing.com",
+  "sfUser": "UDAY77799",
+  "sfPassword": "Ronaldo789789789", 
+  "sfDatabase": "TAXI_DB",
+  "sfSchema": "PUBLIC",
+  "sfWarehouse": "COMPUTE_WH"
+}
+
+# 2. Write the Gold DataFrame directly into Snowflake
+ai_ready_df.write \
+  .format("snowflake") \
+  .options(**sfOptions) \
+  .option("dbtable", "GOLD_TAXI_PREMIUM_TRIPS") \
+  .mode("overwrite") \
+  .save()
+
+print("Success! Gold data successfully loaded into Snowflake Data Warehouse.")
