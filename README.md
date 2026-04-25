@@ -18,10 +18,13 @@ An automated ELT data pipeline built to process NYC Taxi data. This project tran
 This repository is configured with a continuous deployment pipeline using GitHub Actions. Any commits pushed to the `main` branch automatically trigger a workflow that authenticates and deploys the updated PySpark logic directly to the Databricks production environment via the Databricks REST API.
 
 ## Proof of Execution
-Below are the results of the automated Databricks Job run and the final engineered Gold table output.
 
-*(Pipeline Success)*
-![Job Success](Screenshot%202026-04-25%20142834.png)
+**1. Databricks Pipeline Success & Gold Table Output**
+Below is the successful Databricks Job run, showing the "Succeeded" status and the final engineered Gold table with the `is_premium_trip` feature.
 
-*(Gold Table Output)*
-![Data Output](Screenshot%202026-04-25%20143631.png)
+![Databricks Success](Screenshot%202026-04-25%20142834.png)
+
+**2. Snowflake Target Environment Setup**
+The target Snowflake environment was fully configured with the necessary warehouse, database, and schema to receive the pipeline's output.
+
+![Snowflake Configuration](Screenshot%202026-04-25%20143631.png)
