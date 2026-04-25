@@ -88,7 +88,7 @@ display(ai_ready_df.select("vendor_id", "total_amount", "is_premium_trip"))
 sfOptions = {
   "sfUrl": "YDTUQKX-EEC82979.snowflakecomputing.com",
   "sfUser": "UDAY77799",
-  "sfPassword": "Ronaldo789789789", 
+  "sfPassword": "REDACTED", 
   "sfDatabase": "TAXI_DB",
   "sfSchema": "PUBLIC",
   "sfWarehouse": "COMPUTE_WH"
