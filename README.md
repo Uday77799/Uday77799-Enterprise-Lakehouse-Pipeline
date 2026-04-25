@@ -21,7 +21,7 @@ This repository is configured with a continuous deployment pipeline using GitHub
 Below are the results of the automated Databricks Job run and the final engineered Gold table output.
 
 *(Pipeline Success)*
-![Job Success](Screenshot%202026-04-25%20142834.jpg)
+![Job Success](Screenshot%202026-04-25%20142834.png)
 
 *(Gold Table Output)*
-![Data Output](Screenshot%202026-04-25%20143631.jpg)
+![Data Output](Screenshot%202026-04-25%20143631.png)
