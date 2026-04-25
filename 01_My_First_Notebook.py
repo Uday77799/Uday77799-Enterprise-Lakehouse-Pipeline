@@ -75,7 +75,7 @@ from pyspark.sql.functions import when, col
 
 # Using your actual Yellow Taxi data
 # Let's create the AI feature: High-Value Trip (Over $50)
-ai_ready_df = yellow_taxis.withColumn(
+ai_ready_df = df.withColumn(
     "is_premium_trip", 
     when(col("total_amount") > 50, 1).otherwise(0)
 )
