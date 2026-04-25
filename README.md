@@ -24,4 +24,4 @@ Below are the results of the automated Databricks Job run and the final engineer
 ![Job Success](Screenshot%202026-04-25%20142834.jpg)
 
 *(Gold Table Output)*
-![Data Output](Screenshot%202026-04-25%20143631.png)
+![Data Output](Screenshot%202026-04-25%20143631.jpg)
